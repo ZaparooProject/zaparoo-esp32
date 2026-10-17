@@ -136,6 +136,7 @@ export class ZapUtils{
         const msgData = JSON.parse(event.data);
         //console.log("ZapSvs Msg: ", event.data);
         if(typeof(msgData.result) != "undefined"){
+        if(msgData.result != null && typeof(msgData.result) === "object"){
             //return of Systems List
             if(typeof(msgData.result.systems) != "undefined"){
                 let tmpSysList: zapSystems = msgData.result;
